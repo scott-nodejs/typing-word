@@ -175,27 +175,6 @@ defineExpose({del, showWord, hideWord, play})
 
 <template>
   <div class="typing-word">
-    <div class="translate"
-         :style="{
-      fontSize: settingStore.fontSize.wordTranslateFontSize +'rem',
-      opacity: settingStore.translate ? 1 : 0
-    }"
-    >
-      <div class="translate-item" v-for="(v,i) in word.trans">
-        <span>{{ v }}</span>
-        <!--        <div class="volumeIcon">-->
-        <!--          <Tooltip-->
-        <!--              v-if="i === word.trans.length - 1"-->
-        <!--              :title="`发音(快捷键：${settingStore.shortcutKeyMap[ShortcutKey.PlayTranslatePronunciation]})`"-->
-        <!--          >-->
-        <!--            <VolumeIcon-->
-        <!--                ref="volumeTranslateIconRef"-->
-        <!--                :simple="true"-->
-        <!--                :cb="()=>ttsPlayAudio(word.trans.join(';'))"/>-->
-        <!--          </Tooltip>-->
-        <!--        </div>-->
-      </div>
-    </div>
     <div class="word-wrapper">
       <div class="word"
            :class="wrong && 'is-wrong'"
@@ -220,6 +199,16 @@ defineExpose({del, showWord, hideWord, play})
     </div>
     <div class="phonetic" v-if="settingStore.wordSoundType === 'us' && word.usphone">[{{ word.usphone }}]</div>
     <div class="phonetic" v-if="settingStore.wordSoundType === 'uk' && word.ukphone">[{{ word.ukphone }}]</div>
+<!--    <div class="translate"-->
+<!--         :style="{-->
+<!--      fontSize: settingStore.fontSize.wordTranslateFontSize +'rem',-->
+<!--      opacity: settingStore.translate ? 1 : 0-->
+<!--    }"-->
+<!--    >-->
+<!--      <div class="translate-item" v-for="(v,i) in word.trans">-->
+<!--        <span>{{ v }}</span>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 

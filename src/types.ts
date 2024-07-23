@@ -192,11 +192,11 @@ export enum TranslateEngine {
 }
 
 export const languageCategoryOptions = [
-  {id: 'article', name: '文章', flag: bookFlag},
-  {id: 'en', name: '英语', flag: enFlag},
+  // {id: 'article', name: '文章', flag: bookFlag},
+  {id: 'en', name: '词书', flag: enFlag},
   // {id: 'ja', name: '日语', flag: jpFlag},
   // {id: 'de', name: '德语', flag: deFlag},
-  {id: 'code', name: 'Code', flag: codeFlag},
+  // {id: 'code', name: 'Code', flag: codeFlag},
   {id: 'my', name: '我的', flag: myFlag},
 ]
 

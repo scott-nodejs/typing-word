@@ -268,14 +268,21 @@ onUnmounted(() => {
         @wrong="wordWrong"
         @next="next"
     />
-    <div class="options-wrapper">
-      <Options
-          :is-simple="isWordSimple(word)"
-          @toggle-simple="toggleWordSimpleWrapper"
-          :is-collect="isWordCollect(word)"
-          @toggle-collect="toggleWordCollect(word)"
-          @skip="next(false)"
-      />
+<!--    <div class="options-wrapper">-->
+<!--      <Options-->
+<!--          :is-simple="isWordSimple(word)"-->
+<!--          @toggle-simple="toggleWordSimpleWrapper"-->
+<!--          :is-collect="isWordCollect(word)"-->
+<!--          @toggle-collect="toggleWordCollect(word)"-->
+<!--          @skip="next(false)"-->
+<!--      />-->
+<!--    </div>-->
+
+    <div class="options-item-wrapper">
+      <div class="option-list-item">A: 包商银行-备注，包商银行</div>
+      <div class="option-list-item">A: 包商银行-备注，包商银行</div>
+      <div class="option-list-item">A: 包商银行-备注，包商银行</div>
+      <div class="option-list-item">A: 包商银行-备注，包商银行</div>
     </div>
 
     <Teleport to="body">
@@ -399,7 +406,7 @@ onUnmounted(() => {
     }
 
     .word {
-      font-size: 24rem;
+      font-size: 22rem;
       margin-bottom: 4rem;
       font-family: var(--word-font-family);
     }
@@ -425,6 +432,26 @@ onUnmounted(() => {
     //bottom: 0;
     margin-left: -30rem;
     margin-top: 120rem;
+  }
+
+  .options-item-wrapper {
+    padding-bottom: 40rem;
+  }
+
+  .option-list-item {
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--color-item-bg);
+    color: var(--color-font-3);
+    font-size: 18rem;
+    border-radius: 8rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s;
+    padding: 10rem;
+    gap: 10rem;
+    border: 1px solid var(--color-item-border);
   }
 }
 

@@ -56,7 +56,8 @@ const groupByTranslateLanguage = $computed(() => {
 
 const groupedByCategoryAndTag = $computed(() => {
   const currentTranslateLanguageDictList = groupByTranslateLanguage[currentTranslateLanguage]
-  const groupByCategory = groupBy(currentTranslateLanguageDictList, 'category')
+  let zhCurrentTranslateLanguageDictList = currentTranslateLanguageDictList.filter(v => v.category === '中国考试')
+  const groupByCategory = groupBy(zhCurrentTranslateLanguageDictList, 'category')
 
   let data = []
   for (const [key, value] of Object.entries(groupByCategory)) {
@@ -91,12 +92,12 @@ const groupedByCategoryAndTag = $computed(() => {
               :list="groupByTranslateLanguage['common']"/>
         </template>
         <template v-else>
-          <div class="translate">
-            <span>翻译：</span>
-            <el-radio-group v-model="currentTranslateLanguage">
-              <el-radio-button border v-for="i in translateLanguageList" :label="i">{{ $t(i) }}</el-radio-button>
-            </el-radio-group>
-          </div>
+<!--          <div class="translate">-->
+<!--            <span>翻译：</span>-->
+<!--            <el-radio-group v-model="currentTranslateLanguage">-->
+<!--              <el-radio-button border v-for="i in translateLanguageList" :label="i">{{ $t(i) }}</el-radio-button>-->
+<!--            </el-radio-group>-->
+<!--          </div>-->
           <DictGroup
               v-for="item in groupedByCategoryAndTag"
               :select-id="store.currentDict.id"

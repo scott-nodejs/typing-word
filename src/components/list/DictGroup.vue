@@ -28,7 +28,7 @@ watch(() => props.groupByTag, () => {
 
 <template>
   <div class="dict-group">
-    <div class="category">{{ category }}</div>
+<!--    <div class="category">{{ category }}</div>-->
     <div class="tags">
       <div class="tag" :class="i === currentTag &&'active'"
            @click="currentTag = i"
